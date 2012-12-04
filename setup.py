@@ -16,8 +16,12 @@ long_description = (
     )
 requires = [
     "setuptools",
-    "Products.ATReferenceBrowserWidget",
-    "collective.cmisbrowser"
+    "zope.schema",
+    "plone.app.content",
+    "plone.app.form",
+    "infrae.plone.relations.form",
+    "infrae.plone.relations.schema",
+    "collective.cmisbrowser",
     ]
 
 tests_requires = [
