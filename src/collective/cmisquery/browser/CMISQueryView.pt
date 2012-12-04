@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="collective.cmisquery">
+
+  <body>
+    <div metal:fill-slot="main">
+      <tal:main-macro metal:define-macro="main">
+
+        <tal:results tal:define="results view/update">
+
+
+          <h1><span tal:content="context/Title">Title</span></h1>
+
+          <p tal:condition="view/feedback"
+             tal:content="view/feedback">Feedback</p>
+
+          <tal:nofeedback tal:condition="not: view/feedback">
+            <p tal:replace="structure context/text" />
+
+            <tal:empty tal:condition="not: results">
+              No documents are matching the query.
+            </tal:empty>
+
+            <ul tal:condition="results">
+              <li tal:repeat="result results">
+                <a href="#" title="#"
+                   tal:attributes="href result/absolute_url;
+                                   title result/Title"
+                   tal:content="result/Title">
+                  Title
+                </a>
+              </li>
+            </ul>
+          </tal:nofeedback>
+
+        </tal:results>
+
+      </tal:main-macro>
+    </div>
+  </body>
+</html>

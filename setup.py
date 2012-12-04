@@ -16,6 +16,7 @@ long_description = (
     )
 requires = [
     "setuptools",
+    "Products.ATReferenceBrowserWidget",
     "collective.cmisbrowser"
     ]
 

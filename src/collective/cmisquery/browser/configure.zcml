@@ -1,0 +1,32 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:resource
+     name="collective.cmisquery.icon.png"
+     image="static/CMISQuery.png"
+     />
+
+  <browser:page
+     for="zope.app.container.interfaces.IAdding"
+     name="collective.cmisquery.CMISQuery"
+     class=".forms.CMISQueryAddForm"
+     permission="collective.cmisquery.AddCMISQuery"
+     />
+
+  <browser:page
+     for="collective.cmisquery.content.cmisquery.CMISQuery"
+     name="edit"
+     class=".forms.CMISQueryEditForm"
+     permission="cmf.ModifyPortalContent"
+     />
+
+  <browser:page
+     for="collective.cmisquery.content.cmisquery.CMISQuery"
+     name="view"
+     class=".views.CMISQueryView"
+     template="CMISQueryView.pt"
+     permission="zope2.View"
+     />
+
+</configure>

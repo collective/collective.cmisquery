@@ -1,2 +1,6 @@
 # -*- coding: utf-8 -*-
-# This is a package.
+
+
+
+def initialize(context):
+    pass

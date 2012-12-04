@@ -1,0 +1,18 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:five="http://namespaces.zope.org/five">
+
+  <five:registerClass
+     class=".cmisquery.CMISQuery"
+     meta_type="CMIS Query"
+     permission="collective.cmisquery.AddCMISQuery"
+     addview="collective.cmisquery.CMISQuery"
+     icon="collective.cmisquery.icon.png"
+     />
+
+  <utility
+     component=".cmisquery.CMISQueryFactory"
+     name="collective.cmisquery.CMISQuery"
+     />
+
+</configure>
